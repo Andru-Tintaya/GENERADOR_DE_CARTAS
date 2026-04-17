@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updatePreview();
     
     function setupEvents() {
-        ['paisSelect','tipoDoc','autoridad','cargoJefe','nombre','ci','cargoPropio'].forEach(id => {
+        ['paisSelect','tipoDoc','autoridad','cargoJefe','nombre','ci','cargoPropio','lugar'].forEach(id => {
             document.getElementById(id).addEventListener('input', updatePreview);
         });
         
@@ -62,12 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const cargoPropio = document.getElementById('cargoPropio').value?.toUpperCase() || 'CARGO';
         const autoridad = document.getElementById('autoridad').value?.toUpperCase() || 'AUTORIDAD';
         const cargoJefe = document.getElementById('cargoJefe').value?.toUpperCase() || 'CARGO';
-        
-        const pais = document.getElementById('paisSelect').value;
-        const ciudad = PLANTILLAS.paises[pais]?.ciudad || 'La Paz, Bolivia';
-        const docType = PLANTILLAS.paises[pais]?.id || 'C.I.';
         const fecha = new Date();
-        const fechaTexto = `${ciudad}, ${fecha.getDate()} de ${PLANTILLAS.meses[fecha.getMonth()]} de ${fecha.getFullYear()}`;
+        const lugarInput = document.getElementById('lugar').value.trim() || 'La Paz, Bolivia';
+        const fechaTexto = `${lugarInput}, ${fecha.getDate()} de ${PLANTILLAS.meses[fecha.getMonth()]} de ${fecha.getFullYear()}`;
+
+        const pais = document.getElementById('paisSelect').value;
+        const docType = PLANTILLAS.paises[pais]?.id || 'C.I.';
+        
+        
         
         let textoDinamico = PLANTILLAS.contenidos[tipo]?.[variante] || 
             PLANTILLAS.contenidos.GENERICO[variante] ||
@@ -104,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('previewStatus').textContent = tipo ? '✓ Listo para generar PDF' : 'Esperando datos...';
         toggleBtn();
     }
+    
     function generarPDF() {
         const { jsPDF } = window.jspdf;
         
@@ -122,12 +125,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const nombre = document.getElementById('nombre').value.toUpperCase().trim();
         const ci = document.getElementById('ci').value.trim();
         const cargoPropio = document.getElementById('cargoPropio').value.toUpperCase().trim();
+        const lugarInput = document.getElementById('lugar').value.trim() || 'La Paz, Bolivia';
         const pais = document.getElementById('paisSelect').value;
         const docType = PLANTILLAS.paises[pais]?.id || 'C.I.';
-        const ciudad = PLANTILLAS.paises[pais]?.ciudad || 'La Paz, Bolivia';
-        
         const fecha = new Date();
-        const fechaTexto = `${ciudad}, ${fecha.getDate()} de ${PLANTILLAS.meses[fecha.getMonth()]} de ${fecha.getFullYear()}`;
+        const fechaTexto = `${lugarInput}, ${fecha.getDate()} de ${PLANTILLAS.meses[fecha.getMonth()]} de ${fecha.getFullYear()}`;
         
         let y = marginTop;
         

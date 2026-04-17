@@ -16,11 +16,11 @@
         <header class="app-header">
             <div class="header-content">
                 <div class="logo-area">
-                    <h1>📝 ProgreSoft <span class="badge">v3.1</span></h1>
+                    <h1>ProgreSoft <span class="badge">v3.1</span></h1>
                     <p>Correspondencia Profesional Exacta</p>
                 </div>
                 <div class="header-actions">
-                    <a href="index.html" class="btn-home">🏠 Inicio</a>
+                    <a href="index.html" class="btn-home">Inicio</a>
                 </div>
             </div>
         </header>
@@ -28,11 +28,11 @@
         <main class="main-content">
             <section class="form-section">
                 <div class="card-panel">
-                    <h3 class="panel-title">⚙️ Configuración del Documento</h3>
+                    <h3 class="panel-title">Configuración del Documento</h3>
                     
                     <div class="config-grid">
                         <div class="input-group">
-                            <label for="paisSelect">📍 País de origen:</label>
+                            <label for="paisSelect">Documento de identidad</label>
                             <select id="paisSelect">
                                 <option value="bo">🇧🇴 Bolivia (C.I.)</option>
                                 <option value="pe">🇵🇪 Perú (DNI)</option>
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="input-group">
-                            <label for="tipoDoc">📄 Tipo de Carta:</label>
+                            <label for="tipoDoc">Tipo de Carta:</label>
                             <select id="tipoDoc">
                                 <option value="">-- Selecciona un motivo --</option>
                             </select>
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="config-row">
-                        <label>💡 Variante de Contenido:</label>
+                        <label>Variante de Contenido:</label>
                         <div class="variante-selector">
                             <button type="button" class="opt-btn active" data-opt="opcion1">Opción 1</button>
                             <button type="button" class="opt-btn" data-opt="opcion2">Opción 2</button>
@@ -69,7 +69,7 @@
                     </div>
 
                     <div class="config-row">
-                        <label>📏 Alineación de la Referencia (REF):</label>
+                        <label>Alineación de la Referencia (REF):</label>
                         <div class="align-selector">
                             <button id="alignLeft" class="align-btn active" title="Alinear a la izquierda">⬅️</button>
                             <button id="alignCenter" class="align-btn" title="Centrar">Centro</button>
@@ -79,20 +79,24 @@
                 </div>
 
                 <div class="card-panel fields-container">
-                    <h3 class="panel-title">✍️ Datos del Documento</h3>
+                    <h3 class="panel-title">Datos del Documento</h3>
                     
                     <div class="input-grid">
                         <div class="input-group">
+                            <label>Lugar</label>
+                            <input type="text" id="lugar" placeholder="Ej: La Paz, Bolivia">
+                        </div>
+                        <div class="input-group">
                             <label>Dirigido a:</label>
-                            <input type="text" id="autoridad" placeholder="Ej: Lic. Ing. William Roque">
+                            <input type="text" id="autoridad" placeholder="Ej: Lic. Juan Perez">
                         </div>
                         <div class="input-group">
                             <label>Cargo del Destinatario:</label>
-                            <input type="text" id="cargoJefe" placeholder="Ej: Director de Carrera">
+                            <input type="text" id="cargoJefe" placeholder="Ej: Gerente General">
                         </div>
                         <div class="input-group">
                             <label>Tu Nombre Completo:</label>
-                            <input type="text" id="nombre" placeholder="Ej: Mayk Andru Tintaya">
+                            <input type="text" id="nombre" placeholder="Ej: Jorge Mamani">
                         </div>
                         <div class="input-group">
                             <label id="labelDocumento">Cédula de Identidad (C.I.):</label>
@@ -100,7 +104,7 @@
                         </div>
                         <div class="input-group full-width">
                             <label>Información Adicional (Cargo/Oficio):</label>
-                            <input type="text" id="cargoPropio" placeholder="Ej: Estudiante de Ingeniería">
+                            <input type="text" id="cargoPropio" placeholder="Ej: Gerente General">
                         </div>
                     </div>
                 </div>
@@ -112,14 +116,14 @@
                     </div>
                     
                     <button id="btnGenerar" class="btn-primary" disabled>
-                        <span>🎯 GENERAR DOCUMENTO PDF</span>
+                        <span>GENERAR DOCUMENTO PDF</span>
                     </button>
                 </div>
             </section>
 
             <section class="preview-section">
                 <div class="preview-toolbar">
-                    <h3>📄 Vista Previa en Tiempo Real</h3>
+                    <h3>Vista Previa en Tiempo Real</h3>
                     <span id="previewStatus" class="status-badge">Esperando datos...</span>
                 </div>
                 
@@ -141,7 +145,12 @@
                 <!-- AQUÍ PEGA GOOGLE ADSENSE -->
                 <span>📢 Espacio Publicitario</span>
             </div>
-            <p>© 2026 ProgreSoft - Andru Tintaya Gutierrez</p>
+            <p>© 2026 ProgreSoft</p>
+            <div class="social-links" style="display: flex; justify-content: center;">
+                <a href="privacidad.html">Privacidad</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="terminos.html">Terminos</a>
+            </div>
         </footer>
     </div>
 
